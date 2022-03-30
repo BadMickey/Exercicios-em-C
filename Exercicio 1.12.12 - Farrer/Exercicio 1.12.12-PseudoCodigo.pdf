@@ -1,0 +1,99 @@
+/*
+
+ 1.12.12. O sistema de avaliação de uma determinada disciplina obedece aos seguintes critérios:
+- durante o semestre são dadas três notas;
+- a nota final é obtida pela média aritmética das notas dadas durante o curso;
+- é considerado aprovado o aluno que obtiver a nota final superior ou igual a 60 e que
+tiver comparecido a um mínimo de 40 aulas.
+Fazer um algoritmo que:
+
+a) Leia um conjunto de dados contendo o número de matrícula, as três notas e a frequência
+(número de aulas frequentadas) de 100 alunos.
+
+b) Calcule:
+- a nota final de cada aluno;
+- a maior e menor nota da turma;
+- a nota média da turma;
+- o total de alunos reprovados; 
+- a porcentagem de alunos reprovados por infrequência;
+
+c) Escreva:
+- para cada aluno, o número de matrícula, a frequência, a nota final e o código
+(aprovado ou reprovado);
+- o que foi calculado no item b (2,3,4 e 5)
+
+*/
+
+programa{
+    função inicio()
+    {
+        inteiro i, totalrepro, reprofreq;
+    real matricula[100], nota1[100], nota2[100], nota3[100], frequencia[100], notaFinal[100]
+    real maiorNota, menorNota, contadorNota = 0, mediaTurma, preprofreq;
+
+    escreva("Entrada de Dados:")
+    para (i = 0; i <= 100; i++)//vai ler 100x
+    {
+        escreva("\nNumero da matricula do aluno ", i+1, ": ")
+        leia(&matricula[i])
+        escreva("\nNota 1 do aluno ", i+1, ": ")
+        leia(&nota1[i])
+        escreva("\nNota 2 do aluno ", i+1, ": ")
+        leia(&nota2[i])
+        escreva("\nNota 3 do aluno ", i+1, ": ")
+        leia(&nota3[i])
+        escreva("\nNumero de aulas que o aluno ", i+1, " assistiu: ")
+        leia(&frequencia[i])
+    }
+    
+    para (i = 0; i <= 100; i++)
+    {
+        notaFinal[i] = (nota1[i] + nota2[i] + nota3[i]) / 3;
+        contadorNota += notaFinal[i]
+    }
+    mediaTurma = contadorNota / 3;
+    
+    maiorNota = menorNota = notaFinal[0]
+    para (i = 1; i <= 100; i++)
+    {
+        se (notaFinal[i] > maiorNota)
+        {
+            maiorNota = notaFinal[i]
+        }
+        se (menorNota > notaFinal[i])
+        {
+            menorNota = notaFinal[i]
+        }
+    }
+
+    escreva("\n\n\nSaida de Dados:\n")
+    para (i = 0; i <= 100; i++)
+    {
+        escreva("\nNumero da matricula do aluno ", i+1, "é: ", matricula[i])
+        escreva("\nNumero de aulas que o aluno ", i+1, "assistiu é: ", frequencia[i])
+        escreva("\nNota final do aluno ", i+1, "é: ", notaFinal[i])
+        se (notaFinal[i] >= 60 && frequencia[i] >= 40)
+        {
+            escreva("\nAluno Aprovado!")
+        }
+        outro se (notaFinal[i] >= 60 && frequencia[i] < 40)
+        {
+            escreva("\nAluno Reprovado!")
+            totalrepro+=1;
+            reprofreq+=1;
+        }
+        outro
+        {
+            escreva("\nAluno Reprovado!")
+            totalrepro+=1;
+        }
+    }
+
+    escreva("\nMaior nota: ", maiorNota)
+    escreva("\nMenor nota: ", menorNota)
+    escreva("\nMédia da turma: ", mediaTurma)
+    escreva("\nTotal de alunos reprovados: ", totalrepro)
+    escreva("\nPorcentagem de Alunos reprovados por infrequência: ", reprofreq, "%")
+    //Cada aluno reprovado vai equivaler a 1% dos 100 alunos.
+    }
+}
