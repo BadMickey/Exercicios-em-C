@@ -6,7 +6,7 @@ int main()
     float maiorNota, menorNota, contadorNota = 0, mediaTurma, preprofreq;
 
     printf("Entrada de Dados:");
-    for (i = 0; i < 100; i++)//vai ler 100x
+    for (i = 0; i <= 100; i++)//vai ler 100x
     {
         printf("\nNumero da matricula do aluno %d: ", i+1);
         scanf("%f", &matricula[i]);
@@ -20,14 +20,15 @@ int main()
         scanf("%f", &frequencia[i]);
     }
     
-    for (i = 0; i < 100; i++)
+    for (i = 0; i <= 100; i++)
     {
         notaFinal[i] = (nota1[i] + nota2[i] + nota3[i]) / 3;
         contadorNota += notaFinal[i];
     }
     mediaTurma = contadorNota / 3;
+    
     maiorNota = menorNota = notaFinal[0];
-    for (i = 1; i < 100; i++)
+    for (i = 1; i <= 100; i++)
     {
         if (notaFinal[i] > maiorNota)
         {
@@ -40,7 +41,7 @@ int main()
     }
 
     printf("\n\n\nSaida de Dados:\n");
-    for (i = 0; i < 100; i++)
+    for (i = 0; i <= 100; i++)
     {
         printf("\nNumero da matricula do aluno %d e %.0f: ", i+1, matricula[i]);
         printf("\nNumero de aulas que o aluno %d assistiu e %.2f ", i+1, frequencia[i]);
