@@ -29,7 +29,7 @@ programa{
     {
         inteiro i, totalrepro, reprofreq;
     real matricula[100], nota1[100], nota2[100], nota3[100], frequencia[100], notaFinal[100]
-    real maiorNota, menorNota, contadorNota = 0, mediaTurma, preprofreq;
+    real maiorNota, menorNota, contadorNota = 0, mediaTurma, preprofreq
 
     escreva("Entrada de Dados:")
     para (i = 0; i <= 100; i++)//vai ler 100x
@@ -51,7 +51,7 @@ programa{
         notaFinal[i] = (nota1[i] + nota2[i] + nota3[i]) / 3;
         contadorNota += notaFinal[i]
     }
-    mediaTurma = contadorNota / 3;
+    mediaTurma = contadorNota / 3
     
     maiorNota = menorNota = notaFinal[0]
     para (i = 1; i <= 100; i++)
@@ -79,13 +79,13 @@ programa{
         outro se (notaFinal[i] >= 60 && frequencia[i] < 40)
         {
             escreva("\nAluno Reprovado!")
-            totalrepro+=1;
-            reprofreq+=1;
+            totalrepro+=1
+            reprofreq+=1
         }
         outro
         {
             escreva("\nAluno Reprovado!")
-            totalrepro+=1;
+            totalrepro+=1
         }
     }
 
