@@ -32,7 +32,7 @@ programa{
     real maiorNota, menorNota, contadorNota = 0, mediaTurma, preprofreq
 
     escreva("Entrada de Dados:")
-    para (i = 0; i <= 100; i++)//vai ler 100x
+    para (i = 0; i < 100; i++)//vai ler 100x
     {
         escreva("\nNumero da matricula do aluno ", i+1, ": ")
         leia(&matricula[i])
@@ -46,7 +46,7 @@ programa{
         leia(&frequencia[i])
     }
     
-    para (i = 0; i <= 100; i++)
+    para (i = 0; i < 100; i++)
     {
         notaFinal[i] = (nota1[i] + nota2[i] + nota3[i]) / 3;
         contadorNota += notaFinal[i]
@@ -54,7 +54,7 @@ programa{
     mediaTurma = contadorNota / 3
     
     maiorNota = menorNota = notaFinal[0]
-    para (i = 1; i <= 100; i++)
+    para (i = 1; i < 100; i++)
     {
         se (notaFinal[i] > maiorNota)
         {
@@ -67,7 +67,7 @@ programa{
     }
 
     escreva("\n\n\nSaida de Dados:\n")
-    para (i = 0; i <= 100; i++)
+    para (i = 0; i < 100; i++)
     {
         escreva("\nNumero da matricula do aluno ", i+1, "é: ", matricula[i])
         escreva("\nNumero de aulas que o aluno ", i+1, "assistiu é: ", frequencia[i])
