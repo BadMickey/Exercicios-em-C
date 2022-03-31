@@ -26,6 +26,7 @@ int main()
         vetC[i*2] = vetA[i];
         vetC[i*2+1] = vetB[i];
     }
+    
     printf("\n\n\nVetor A: {");
     for(i=0;i<TAM;i++)
     {
