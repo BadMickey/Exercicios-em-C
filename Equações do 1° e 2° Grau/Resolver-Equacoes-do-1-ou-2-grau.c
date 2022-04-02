@@ -28,7 +28,6 @@ int main(){
             printf("\nX = %.2f", x);
         }else{
             printf("\n\nVariável não encontrada!");
-            return;
         }
     }else if(grauEquacao==2){
             printf("\n\nDigite o valor de a:");
@@ -50,19 +49,17 @@ int main(){
                 delt = b*b - 4*a*c;
                 if(delt<0){
                     printf("\n\nNão há raiz real, pois Delta é menor que 0!");
-                    return;
                 }else if(delt>0){
                     x1 = (-b + sqrt(delt)) / (2*a);
                     x2 = (-b - sqrt(delt)) / (2*a);
                     printf("\n\nx1= %.2f\nx2= %.2f", x1, x2);
                 }else{
-                    x = (-b + delt) / 2*a;
-                    printf("\n\nx1= %.2f\nx2= %.2f", x1, x1);
+                    x = (-b + delt) / (2*a);
+                    printf("\n\nx1= %.2f\nx2= %.2f", x, x);
                 }
             }
         }else{
             printf("\n\nNão há esse tipo de equação no sistema!");
-            return;
         }
     return 0;
 }
